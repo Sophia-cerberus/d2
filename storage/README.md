@@ -182,8 +182,8 @@ curl -X GET -H "Basic: Basic your-api-key" http://127.0.0.1:8000/api/v1/storage/
 ---
 
 ### 2.3 **下载文件**
-
 直接访问列表或详情接口文件地址
+
 ---
 
 ### 2.4 **下载缩略图**
