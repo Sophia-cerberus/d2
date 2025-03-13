@@ -8,7 +8,7 @@ from apps.storage.serializers import (
 )
 from apps.storage.models import ImageStorage
 from utils.viewsets import ModelViewSet
-from utils.response import SuccessResponse, ErrorResponse
+from utils.response import SuccessResponse, NotFoundResponse
 from rest_framework import status
 
 
@@ -35,7 +35,7 @@ class ImageStorageViewSet(ModelViewSet):
             delete_instance_files(instance.pk)  # 删除与实例相关的文件夹及文件
             self.perform_destroy(instance)
         except ObjectDoesNotExist:
-            return ErrorResponse(data={'detail': 'File not found.'}, status=status.HTTP_404_NOT_FOUND)
+            return NotFoundResponse(data={'file.url': 'File not found.'})
 
-        return SuccessResponse(status=status.HTTP_204_NO_CONTENT)
+        return SuccessResponse(code=204)
 
