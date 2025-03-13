@@ -1,0 +1,1 @@
+from apps.storage.views.storage import ImageStorageViewSet

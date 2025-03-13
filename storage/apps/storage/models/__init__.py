@@ -1,0 +1,1 @@
+from apps.storage.models.storage import ImageStorage
